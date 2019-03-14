@@ -39,7 +39,12 @@ function evaluateRestOfValues() {
     } else if (operator === `-`){
       result = first - second;
     } else if (operator === `/`) {
-      result = first / second;
+      if (second === 0) {
+        infinityResponse();
+        return;
+      } else {
+        result = first / second;
+      }
     } else {
       result = first * second;
     }
@@ -48,7 +53,7 @@ function evaluateRestOfValues() {
   }
 
   if (inputNumbers.length === 1) {
-    display = [inputNumbers[0]];
+    display = [Math.round(inputNumbers[0] * 10) / 10];
   }
 }
 
@@ -62,6 +67,11 @@ function reset() {
   inputOperators = [];
 }
 
+function infinityResponse() {
+  reset();
+  alert("No dividing by 0. Calculator has been reset.");
+}
+
 function listenToButtonClick(e) {
   let input = e.target.textContent.charAt(0);
 
@@ -69,8 +79,7 @@ function listenToButtonClick(e) {
     if (inputNumbers.length - 1 === inputOperators.length && inputNumbers.length != 0) {
       if (multiplyOrDivide) {
         if (!evaluateMultiplyOrDivision()) {
-          reset();
-          alert("Not happening. Things have been reset, wise guy.");
+          infinityResponse();
         }
         multiplyOrDivide = false;
       }
