@@ -1,0 +1,131 @@
+html,
+  body {
+  width: 100%;
+  height: 100%;      
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator_container {
+    height: 480px;
+    width: 360px;
+    display: grid;
+    grid-template-areas: "display   display     display     display"
+                         "seven     eight       nine        clear"
+                         "four      five        six         multiply"
+                         "one       two         three       divide"
+                         "zero      add         subtract    enter";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 33% 1fr 1fr 1fr 1fr;
+    background-color: rgb(75, 75, 75);
+    border-radius: 4px;
+}
+
+.display {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    grid-area: display;
+    text-align: center;
+    color: black;
+    font-size: 18px;
+    background-color: white;
+    justify-self: center;
+    align-self: center;
+    line-height: 8em;
+    text-align: end;
+    border: 1px rgb(75, 75, 75) solid;
+    padding: 0px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.button {
+    height: 100%;
+    width: 100%;
+    color: white;
+    background-color: rgb(75, 75, 75);
+    text-align: center;
+    font-size: 24px;
+    line-height: 98px;
+}
+
+.button:hover {
+    background-color: rgb(41, 41, 41);
+}
+
+.zero {
+    grid-area: zero;
+}
+
+.one {
+    grid-area: one;
+}
+
+.two {
+    grid-area: two;
+}
+
+.three {
+    grid-area: three;
+}
+
+.four {
+    grid-area: four;
+}
+
+.five {
+    grid-area: five;
+}
+
+.six {
+    grid-area: six;
+}
+
+.seven {
+    grid-area: seven;
+}
+
+.eight {
+    grid-area: eight;
+}
+
+.nine {
+    grid-area: nine;
+}
+
+.multiply {
+    grid-area: multiply;
+}
+
+.divide {
+    grid-area: divide;
+}
+
+.add {
+    grid-area: add;
+}
+
+.subtract {
+    grid-area: subtract;
+}
+
+.clear {
+    grid-area: clear;
+}
+
+.enter {
+    grid-area: enter;
+    background-color: rgb(226, 128, 0);
+}
+
+.enter:hover {
+    background-color: rgb(252, 144, 2);
+}
